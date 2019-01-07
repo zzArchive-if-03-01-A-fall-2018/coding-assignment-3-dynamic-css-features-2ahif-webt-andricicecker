@@ -1,0 +1,202 @@
+body
+{
+  background-color: green;
+  /*background-image: url(Hintergrund.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  margin: -22px auto;
+  padding: 0;
+  overflow: auto;
+}
+
+p
+{
+    font-weight: bold;
+    font-size: 16pt;
+    clear: left;
+}
+
+nav{
+  top:0;
+  position: fixed;
+  padding: 20px 10px;
+  background-color: #f1f1f1;
+  width: 100%;
+  font-family: Arial;
+  z-index: 1000;
+}
+
+nav  a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+}
+
+
+nav a.active
+{
+  background-color: dodgerblue;
+  color: white;
+}
+
+
+nav a:hover
+{
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}
+
+#footercontent{
+  margin: 0;
+}
+
+#formluar{
+  border: black 3px;
+  padding: 90px 20px 90px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  transform: translate(-50%, -50%);
+}
+
+#homepage #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#homepage .description {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  left: 0;
+  padding: 20px;
+}
+
+#homepage #content{
+  padding: 20px 5px 20px;
+  top: 900px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  position: absolute;
+  width: 100%;
+
+}
+
+#homepage #content p{
+  border: black 1px;
+  border-style: solid;
+  padding: 50px;
+  background-color: white;
+}
+
+/* Style the button used to pause/play the video */
+#homepage #myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#homepage #myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+
+article {
+  position: relative;
+  top: 100px;
+  border: 5px solid black;
+  background-color: white;
+  text-align: left;
+  margin-left: 170px;
+  margin-right: 170px;
+  padding : 20px;
+}
+
+article > h2
+{
+  text-align: left;
+  clear: both;
+}
+
+article  picture
+{
+    display: inline-block;
+    padding: 5px;
+    width: 600px;
+    float: right;
+    position: relative;
+}
+
+ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li
+{
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+li:last-child
+{
+    border-right: none;
+}
+
+li a
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover:not(.active)
+{
+    background-color: #111;
+}
+
+.active
+{
+    background-color: #4CAF50;
+}
+
+footer
+{
+  padding: 20px 0px 26px;
+  height: 60px;
+  background: #555;
+  margin-top: 120px;
+  bottom: 0;
+}
