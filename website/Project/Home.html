@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Content</title>
+    <title>Homepage</title>
     <meta charset="utf-8">
     <meta name="description" content="Self Driving Cars">
     <meta name="author" content="Daniel Andricic and Daniel Ecker">
@@ -67,15 +67,20 @@
         // Get the button
         var btn = document.getElementById("myBtn");
 
+        //Get the content
+        
+
         // Pause and play the video, and change the button text
         function myFunction() {
-          if (video.paused) {
-            video.play();
-            btn.innerHTML = "Pause";
-          } else {
-            video.pause();
-            btn.innerHTML = "Play";
-          }
+
+            if (video.paused) {
+              video.play();
+              btn.innerHTML = "Pause";
+            } else {
+              video.pause();
+              btn.innerHTML = "Play";
+            }
+
         }
       </script>
 
