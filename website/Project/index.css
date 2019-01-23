@@ -1,12 +1,38 @@
 body
 {
   background-color: green;
-  /*background-image: url(Hintergrund.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;*/
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinte;
+  -webkit-animation-direction: alternate-reverse;
+
+  -moz-animation-name: example;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate-reverse;
+
+  -o-animation-name: example;
+  -o-animation-duration: 2s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-direction: alternate-reverse;
+
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+
   margin: -22px auto;
   padding: 0;
   overflow: auto;
+}
+
+@-webkit-keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
 }
 
 p
@@ -15,6 +41,38 @@ p
     font-size: 12pt;
     clear: left;
 }
+
+#divExample
+{
+  position: fixed;
+  border: 5px solid black;
+  padding: 20px 10px 20px;
+  background-color: green;
+  width: 100px;
+  height: 100px;
+  transition: width 2s, height 2s;
+  margin-top: 200px;
+  margin-left: 500px;
+  text-align: center;
+
+}
+
+#divExample:hover
+{
+  width: 300px;
+  height: 150px;
+}
+
+/*[input|=Submit]
+{
+  width: 30px;
+  transition: width 2s;
+}
+
+[input|=Submit]:hover
+{
+  width: 50px;
+}*/
 
 nav{
   top:0;
@@ -32,13 +90,11 @@ nav  a {
   padding: 12px;
 }
 
-
 nav a.active
 {
   background-color: dodgerblue;
   color: white;
 }
-
 
 nav a:hover
 {
@@ -85,8 +141,6 @@ nav a:hover
   top: 1260px;
   left: 0;
   right: 0;
-  bottom: 0;
-
   position: absolute;
   width: 100%;
 
@@ -115,6 +169,43 @@ nav a:hover
   color: black;
 }
 
+#content picture
+{
+  display: inline-block;
+  padding: 5px;
+  width: 600px;
+  float: right;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+#ContentFooter
+{
+   bottom:0;
+   width:100%;
+   height:60px;
+   background:#555;
+   margin-top: 620px;
+}
+
+#ContactBody
+{
+  background-image: linear-gradient(to right, Cyan, blue);
+}
+
+#ChangeLog
+{
+  margin-top: 250px;
+  padding: 60px 30px 60px;
+}
+
+#ChangeLog p
+{
+  padding: 40px 20px 40px;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
 .progress-container {
   width: 100%;
   height: 8px;
@@ -137,13 +228,18 @@ article {
   margin-left: 170px;
   margin-right: 170px;
   padding : 20px;
+  box-shadow: 10px 20px 30px grey;
+  border-radius: 20px;
 }
 
 article > h2
 {
   text-align: left;
   clear: both;
+
+
 }
+
 
 article  picture
 {
@@ -153,15 +249,7 @@ article  picture
     float: right;
     position: relative;
 }
-#content picture
-{
-  display: inline-block;
-  padding: 5px;
-  width: 600px;
-  float: right;
-  position: relative;
-  margin-bottom: 30px;
-}
+
 ul
 {
     list-style-type: none;
@@ -208,11 +296,9 @@ footer
   margin-top: 120px;
   bottom: 0;
 }
-#ContentFooter
+
+input
 {
-   bottom:0;
-   width:100%;
-   height:60px;
-   background:#555;
-   margin-top: 620px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
