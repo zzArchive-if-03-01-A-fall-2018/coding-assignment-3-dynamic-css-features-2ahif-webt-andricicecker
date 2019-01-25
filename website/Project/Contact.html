@@ -13,7 +13,7 @@
   <body id="ContactBody">
       <nav>
         <a href="home.html">Home</a>
-        <a href="Content">Content</a>
+        <a href="index.html">Content</a>
         <a href="History.html">History</a>
         <a class="active" href="Contact.html">Contact</a>
         <a href="changeLog.html">ChangeLog (Nur Temporär)</a>
@@ -24,19 +24,19 @@
 
           <form action="/GetFeedback.js">
             First name:<br>
-            <input type="text" name="firstname" value="Max">
+            <input type="text" name="firstname" id="firstnameText" value="Max">
             <br>
             Last name:<br>
-            <input type="text" name="lastname" value="Mustermann">
+            <input type="text" name="lastname" id="lastnameText" value="Mustermann">
             <br>
             Comment:<br>
-            <input type="text" name="comment" value="">
+            <input type="text" name="comment" id="commentText" value="">
             <br>
             <input type="radio" name="gender" value="male" checked> Male<br>
             <input type="radio" name="gender" value="female"> Female<br>
             <input type="radio" name="gender" value="other"> Other
             <br><br>
-            <input type="submit" value="Submit" onClick = "GetInfos()">
+            <input type="submit" value="Submit" onClick = "GetTextFields()">
           </form>
 
         </section>
