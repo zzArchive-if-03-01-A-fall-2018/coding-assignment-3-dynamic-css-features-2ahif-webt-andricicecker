@@ -227,7 +227,7 @@ article {
   text-align: left;
   margin-left: 170px;
   margin-right: 170px;
-  padding : 20px;
+  padding : 20px 5px 40px;
   box-shadow: 10px 20px 30px grey;
   border-radius: 20px;
 }
