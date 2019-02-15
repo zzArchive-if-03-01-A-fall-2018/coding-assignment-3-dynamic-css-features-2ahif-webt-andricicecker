@@ -1,3 +1,8 @@
+html body
+{
+  min-width: 1080px;
+}
+
 body
 {
   background-color: green;
@@ -24,6 +29,7 @@ body
   margin: -22px auto;
   padding: 0;
   overflow: auto;
+  min-width: 800px;
 }
 
 @-webkit-keyframes example {
@@ -222,13 +228,14 @@ nav a:hover
 
 article {
   position: relative;
+  min-width: 30%;
   top: 100px;
   border: 5px solid black;
   background-color: white;
   text-align: left;
   margin-left: 170px;
   margin-right: 170px;
-  padding : 20px 5px 40px;
+  padding: 20px 5px 40px;
   box-shadow: 10px 20px 30px grey;
   border-radius: 20px;
 }
