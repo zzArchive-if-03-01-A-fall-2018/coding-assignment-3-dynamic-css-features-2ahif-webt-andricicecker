@@ -18,38 +18,21 @@
         <a href="History.html">History</a>
         <a class="active" href="Contact.html">Contact</a>
       </nav>
-      <article id="formular">
+      <article>
         <section>
-          <p>If you want to contact us, here is some basic information of us.</p>
+          <div class="form-check">
+            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="Anonymous" aria-label="Anonymous">
+            <label class="form-check-label" for="gridRadios1">
+            Anonymous
+          </label>
+          </div>
 
-          <form>
-            First name:<br>
-            <input type="text" name="firstname" onfocus="this.value=''" id="firstnameText" value="Max">
-            <br>
-            Last name:<br>
-            <input type="text" name="lastname" onfocus="this.value=''" id="lastnameText" value="Mustermann">
-            <br>
-            Comment:<br>
-            <input type="text" name="comment" id="commentText" value="">
-            <br>
-            <input type="radio" name="gender" value="male" checked> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-            <input type="radio" name="gender" value="other"> Other
-            <br><br>
-
-          </form>
-
-        </section>
-
-        <section id="Feedback-System">
-          <p>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">@</span>
             </div>
             <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
           </div>
-
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <div class="input-group-append">
@@ -63,16 +46,6 @@
               <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
             </div>
             <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-          </div>
-
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">$</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-            <div class="input-group-append">
-              <span class="input-group-text">.00</span>
-            </div>
           </div>
 
           <div class="input-group">
