@@ -1,18 +1,5 @@
 function GetTextFields()
 {
-  let firstName = document.getelementbyid("firstnameText").value;
-  let lastName = document.getelementbyid("lastnameText").value;
-  let comment = document.getelementbyid("commentText").value;
-  let gender;
-
-  if()
-  {
-
-  }
-
-  document.getelementbyid("firstnameText").value = "Max";
-  document.getelementbyid("lastnameText").value = "Mustermann";
-  document.getelementbyid("commentText").value = "";
 
   SendToServer(firstname, lastname, comment);
 }
