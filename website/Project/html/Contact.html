@@ -25,6 +25,12 @@
             <label class="form-check-label" for="gridRadios1">Anonymous</label>
           </div>
 
+          <img src="star.png" width="20px" height="20px" id="1" onclick="change(['1']);">
+          <img src="star.png" width="20px" height="20px" id="2" onclick="change(['1', '2']);">
+          <img src="star.png" width="20px" height="20px" id="3" onclick="change(['1', '2', '3']);">
+          <img src="star.png" width="20px" height="20px" id="4" onclick="change(['1', '2', '3', '4']);">
+          <img src="star.png" width="20px" height="20px" id="5" onclick="change(['1', '2', '3', '4', '5']);">
+
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">@</span>
@@ -32,15 +38,13 @@
             <input type="Username" id="Username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
           </div>
 
-
-
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">With textarea</span>
             </div>
             <textarea id="Comment" class="form-control" aria-label="With textarea"></textarea>
+            <br>
           </div>
-
           <button type="button" class="btn btn-dark" onClick="GetTextFields()">Submit</button>
         </section>
 
