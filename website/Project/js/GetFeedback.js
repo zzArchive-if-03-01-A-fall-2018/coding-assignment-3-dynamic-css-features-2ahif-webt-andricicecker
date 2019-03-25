@@ -5,9 +5,12 @@ function GetTextFields()
   {
     username = document.getElementById("Username");
     username.disabled = true;
+    username.value = "";
   }
   let comment = document.getElementById("Comment");
   SendToServer(username, comment);
+  comment.value = "";
+  username.value = "";
 }
 
 function SendToServer(username, comment)
@@ -26,4 +29,6 @@ function SendToServer(username, comment)
     if (err) throw err;
     console.log("Connected!");
   });
+
+
 }
