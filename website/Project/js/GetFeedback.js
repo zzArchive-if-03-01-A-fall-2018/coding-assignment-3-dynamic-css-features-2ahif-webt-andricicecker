@@ -9,8 +9,15 @@ function GetTextFields()
   }
   let comment = document.getElementById("Comment");
   SendToServer(username, comment);
+  AddComent(username, comment);
   comment.value = "";
   username.value = "";
+}
+
+function AddComent(username, comment)
+{
+  var section = document.getElementById("Comments");
+  section.innerHTML += '';
 }
 
 function SendToServer(username, comment)
