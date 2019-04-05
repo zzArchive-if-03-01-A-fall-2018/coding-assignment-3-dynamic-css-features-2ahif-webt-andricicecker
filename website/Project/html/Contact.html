@@ -25,11 +25,12 @@
       </nav>
       <article>
         <section>
-          <div class="form-check">
-            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="Anonymous" aria-label="Anonymous">
-            <label class="form-check-label" for="gridRadios1">Anonymous</label>
-          </div>
-          <br>
+          <form action="" method="post" id="com">
+            <div class="form-check">
+              <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="Anonymous" aria-label="Anonymous">
+              <label class="form-check-label" for="gridRadios1">Anonymous</label>
+            </div>
+            <br>
           <!-- <img src="../Picture/star.png" width="20px" height="20px" id="1" onclick="change(['1']);">
           <img src="../Picture/star.png" width="20px" height="20px" id="2" onclick="change(['1', '2']);">
           <img src="../Picture/star.png" width="20px" height="20px" id="3" onclick="change(['1', '2', '3']);">
@@ -38,28 +39,29 @@
           -->
 
           <!-- Sterne die zur Bewertung, da sind. -->
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
 
-          <br><br>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
-            </div>
-            <input type="text" id="Username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">With textarea</span>
-            </div>
-            <textarea id="Comment" class="form-control" aria-label="With textarea"></textarea>
             <br><br>
-          </div>
-          <button type="button" class="btn btn-dark" onClick="GetTextFields()">Submit</button>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="text" name="username" id="Username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">With textarea</span>
+              </div>
+              <textarea id="Comment" name="comment" rows="7"class="form-control" aria-label="With textarea"></textarea>
+              <br><br>
+            </div>
+            <button type="button" value="Post" name="post"class="btn btn-dark" onClick="GetTextFields()">Post</button>
+          </form>
         </section>
 
         <section>
@@ -78,3 +80,29 @@
 
   </body>
 </html>
+<?php
+
+$name = $_POST["username"];
+$text = $_POST[comment];
+$post = $_POST["post"];
+
+if($post){
+  $write = $fopen("Contact.html", "a+");
+  fwrite($write, "<u><b> $name</b></u><br>$comment<br>");
+  fclose($write);
+
+  $read = fopen("contact.html", "r+t");
+  echo "All comments:<br>";
+
+  while(!feof($read)){
+    echo fread($read, 1024);
+
+  }
+
+  fclose($read);
+}
+else{
+
+}
+
+?>
