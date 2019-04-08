@@ -7,14 +7,17 @@ html body
 body
 {
   /*    margin: -22px auto;*/
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   min-width: 1080px;
   min-height: 950px;
   background-image: url("../Picture/Background.jpg");
   border: 0;
+  -webkit-background-size: auto auto;
+  -moz-background-size: auto auto;
+  -o-background-size: auto auto;
+  background-size: auto auto;
   background-repeat: no-repeat;
   background-position: center;
-  background-size:cover;
 }
 
 p
@@ -23,7 +26,9 @@ p
     font-size: 12pt;
     clear: left;
 }
-
+fa-star.checked {
+      color: orange;
+}
 nav
 {
   top:0;

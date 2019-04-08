@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -76,3 +75,29 @@
 
   </body>
 </html>
+<?php
+
+$name = $_POST["username"];
+$text = $_POST[comment];
+$post = $_POST["post"];
+
+if($post){
+  $write = $fopen("Contact.html", "a+");
+  fwrite($write, "<u><b> $name</b></u><br>$comment<br>");
+  fclose($write);
+
+  $read = fopen("contact.html", "r+t");
+  echo "All comments:<br>";
+
+  while(!feof($read)){
+    echo fread($read, 1024);
+
+  }
+
+  fclose($read);
+}
+else{
+  echo "Error no comment!"
+}
+
+?>
