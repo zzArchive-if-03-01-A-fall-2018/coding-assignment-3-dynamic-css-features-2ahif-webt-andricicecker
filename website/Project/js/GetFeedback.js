@@ -26,8 +26,8 @@ function SendToServer(username, comment)
 
   var con = mysql.createConnection(
   {
-    host: "localhost",
-    user: "yourusername",
+    host: "212.241.114.236",
+    user: "andri",
     password: "yourpassword"
   });
 
