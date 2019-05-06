@@ -12,7 +12,7 @@ $BENUTZER = "admin"; // user
 
 // Passwort
 // Das Passwort sollte mind. 8 Zeichen haben!
-$PASSWORT = "Andri2019"; // 0000
+$PASSWORT = "admin2019"; // 0000
 
 // E-Mail - Empfänger
 $EMAIL = "danielandricic@hotmail.de"; // name@example.com
@@ -39,8 +39,8 @@ $STERN = "&#10026;"; // &#10026;
 // Verbindungsdaten zur Datenbank
 $DB_HOST = "localhost"; // Datenbank-Host
 $DB_NAME = "test"; // Datenbank-Name
-$DB_BENUTZER = "root"; // Datenbank-Benutzer
-$DB_PASSWORT = "root"; // Datenbank-Passwort
+$DB_BENUTZER = "andri"; // Datenbank-Benutzer
+$DB_PASSWORT = "Dani2019"; // Datenbank-Passwort
 
 
 /* Fortgeschrittene Anwender können

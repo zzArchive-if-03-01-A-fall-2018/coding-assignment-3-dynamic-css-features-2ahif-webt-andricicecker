@@ -1,4 +1,4 @@
-function GetTextFields()
+/*function GetTextFields()
 {
   let username;
   if(!document.getElementById("blankCheckbox").checked)
@@ -12,7 +12,7 @@ function GetTextFields()
   AddComent(username, comment);
   comment.value = "";
   username.value = "";
-}
+}*/
 
 function AddComent(username, comment)
 {
