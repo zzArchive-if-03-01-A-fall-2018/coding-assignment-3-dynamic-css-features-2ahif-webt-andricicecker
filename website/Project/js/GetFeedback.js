@@ -17,7 +17,7 @@ function GetTextFields()
 function AddComent(username, comment)
 {
   var section = document.getElementById("Comments");
-  section.innerHTML += '';
+  section.innerHTML += ' ';
 }
 
 function SendToServer(username, comment)
@@ -28,7 +28,7 @@ function SendToServer(username, comment)
   {
     host: "212.241.114.236",
     user: "andri",
-    password: "yourpassword"
+    password: ""
   });
 
   con.connect(function(err)
