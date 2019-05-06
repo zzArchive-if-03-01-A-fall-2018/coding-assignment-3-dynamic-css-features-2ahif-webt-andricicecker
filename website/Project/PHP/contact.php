@@ -26,21 +26,6 @@
               <label class="form-check-label" for="gridRadios1">Anonymous</label>
             </div>
             <br>
-          <!-- <img src="../Picture/star.png" width="20px" height="20px" id="1" onclick="change(['1']);">
-          <img src="../Picture/star.png" width="20px" height="20px" id="2" onclick="change(['1', '2']);">
-          <img src="../Picture/star.png" width="20px" height="20px" id="3" onclick="change(['1', '2', '3']);">
-          <img src="../Picture/star.png" width="20px" height="20px" id="4" onclick="change(['1', '2', '3', '4']);">
-          <img src="../Picture/star.png" width="20px" height="20px" id="5" onclick="change(['1', '2', '3', '4', '5']);">
-          -->
-
-          <!-- Sterne die zur Bewertung, da sind. -->
-            <span class="fa-star"></span>
-            <span class="fa-star"></span>
-            <span class="fa-star"></span>
-            <span class="fa-star"></span>
-            <span class="fa-star"></span>
-
-            <br><br>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">@</span>

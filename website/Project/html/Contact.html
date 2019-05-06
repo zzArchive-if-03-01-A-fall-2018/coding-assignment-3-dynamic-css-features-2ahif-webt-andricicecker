@@ -28,7 +28,6 @@
               <label class="form-check-label" for="gridRadios1">Anonymous</label>
             </div>
             <br>
-            <br><br>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">@</span>
@@ -46,6 +45,24 @@
             <button type="button" value="Post" class="btn btn-dark" onClick="../PHP/contact.php">Post</button>
           </form>
         </section>
+
+        <script>
+        function GetTextFields()
+        {
+          let username;
+          if(!document.getElementById("blankCheckbox").checked)
+          {
+            username = document.getElementById("Username");
+            username.disabled = true;
+            username.value = "";
+          }
+          let comment = document.getElementById("Comment");
+          SendToServer(username, comment);
+          AddComent(username, comment);
+          comment.value = "";
+          username.value = "";
+        }
+        </script>
 
         <section>
           <div id="statistics">Technisch noch nicht ausgereift!</div> <!--Geplante Erweiterung!-->
