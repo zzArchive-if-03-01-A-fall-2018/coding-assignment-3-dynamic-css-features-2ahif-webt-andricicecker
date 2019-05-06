@@ -44,7 +44,7 @@ $(document).ready(function  () {
 })
 function game()
 {
-	$("#start").html("Game Started");
+	$("#Start").html("Game started");
 	$("#gover").fadeOut(100);
 	$("#score").html(0);
 	inte=setInterval(main,1000);
@@ -290,7 +290,7 @@ if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left
 function gover(a)
 {
 	$("#final_score").text(a);
-	$("#start").text("start");
+	$("#Start").text("Start");
 	$("#gover").fadeIn(100);
 	$("#gover").css("color","white");
 	$("#final_score").css("font-size","40px");
