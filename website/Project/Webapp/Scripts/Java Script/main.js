@@ -42,7 +42,7 @@ window.addEventListener("keydown",fun,false);
 $(document).ready(function  () {
 	$("#gover").hide();
 })
-function yedu()
+function game()
 {
 	$("#start").html("Game Started");
 	$("#gover").fadeOut(100);
