@@ -13,7 +13,7 @@
   </head>
   <body id="ContactBody">
       <nav>
-        <a href="home.html">Home</a>
+        <a href="../home.html">Home</a>
         <a href="index.html">Content</a>
         <a href="History.html">History</a>
         <a class="active" href="Contact.html">Contact</a>
