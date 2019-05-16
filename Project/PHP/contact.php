@@ -14,8 +14,8 @@
   <body id="ContactBody">
       <nav>
         <a href="../Home.html">Home</a>
-        <a href="index.html">Content</a>
-        <a href="History.html">History</a>
+        <a href="../html/index.html">Content</a>
+        <a href="../html/History.html">History</a>
         <a class="active" href="Contact.html">Contact</a>
       </nav>
       <article>
