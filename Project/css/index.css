@@ -45,6 +45,7 @@ nav a
   color: black;
   text-align: center;
   padding: 12px;
+  text-decoration: none;
 }
 
 nav a.active
@@ -112,10 +113,6 @@ nav a:hover
 
 }
 
-#homepage #content p
-{
-
-}
 
 /* Style the button used to pause/play the video */
 #homepage #myBtn

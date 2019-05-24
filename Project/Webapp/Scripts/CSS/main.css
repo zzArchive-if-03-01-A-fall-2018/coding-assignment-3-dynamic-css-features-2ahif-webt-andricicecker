@@ -43,6 +43,7 @@ nav a
   text-align: center;
   padding: 10px;
 	float: left;
+	text-decoration: none;
 }
 
 nav a.active
