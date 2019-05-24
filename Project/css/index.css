@@ -105,15 +105,16 @@ nav a:hover
   right: 0;
   position: absolute;
   width: 100%;
+  border: black 1px;
+  border-style: solid;
+  padding: 50px;
+  background-color: white;
 
 }
 
 #homepage #content p
 {
-  border: black 1px;
-  border-style: solid;
-  padding: 50px;
-  background-color: white;
+
 }
 
 /* Style the button used to pause/play the video */
