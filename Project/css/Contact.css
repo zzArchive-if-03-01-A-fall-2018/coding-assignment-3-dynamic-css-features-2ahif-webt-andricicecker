@@ -18,6 +18,7 @@ li.ui-state-default:last-child{
 @import url(http://fonts.googleapis.com/css?family=Roboto:400);
 body {
   background-color:#fff;
+  background-size: auto auto;
   -webkit-font-smoothing: antialiased;
   font: normal 14px Roboto,arial,sans-serif;
 }
