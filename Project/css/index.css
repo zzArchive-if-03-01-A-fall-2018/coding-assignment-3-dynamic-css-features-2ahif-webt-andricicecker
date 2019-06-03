@@ -1,12 +1,10 @@
 html body
 {
   min-width: 1080px;
-
 }
 
 body
 {
-  /*    margin: -22px auto;*/
   margin-bottom: 0px;
   min-width: 1080px;
   min-height: 950px;
@@ -45,7 +43,6 @@ nav a
   color: black;
   text-align: center;
   padding: 12px;
-  text-decoration: none;
 }
 
 nav a.active
@@ -250,10 +247,7 @@ li a:hover:not(.active)
     background-color: #111;
 }
 
-.active
-{
-    background-color: #4CAF50;
-}
+
 
 input
 {
