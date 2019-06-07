@@ -134,20 +134,6 @@ nav a:hover
   margin-bottom: 30px;
 }
 
-#ContentFooter
-{
-   width:100%;
-   margin-top: 620px;
-   height: 80px;
-}
-
-footer
-{
-  padding: 20px 0px 26px;
-  background: #555;
-  border: 0;
-}
-
 #ChangeLog
 {
   margin-top: 250px;
