@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/Contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/fetchapi.js"></script>
   </head>
   <body id="ContactBody">
       <nav>
@@ -20,9 +21,9 @@
         <a href="History.html">History</a>
         <a class="active" href="Contact.html">Contact</a>
       </nav>
-      <article>
+      <article id="com">
         <section>
-          <form action="" method="post" id="com">
+          <form action="" method="post">
             <div class="form-check">
               <input class="form-check-input position-static" onclick="CheckBox()" type="checkbox" id="blankCheckbox"  value="Anonymous" aria-label="Anonymous">
               <label class="form-check-label" for="gridRadios1">Anonymous</label>
@@ -47,9 +48,13 @@
         </section>
       </article>
 
-      <div id="Comments">
-      <!-- Hier sollten, dann die Kommentare eingefügt werden. -->
-      </div>
+
+      <article id="Feedbacks">
+        <h3>Hier werden alle Kommentare angezeigt.</h3>
+        <div id="Comments" onload="FetchComments()">
+
+        </div>
+      </article>
 
       <script>
       function GetTextFields()
@@ -69,10 +74,8 @@
         username.value = "";
       }
 
-      function CheckBox()
+      function CheckBox(username, checkbox)
       {
-        let username = document.getElementById("Username");
-        let checkbox = document.getElementById("blankCheckbox");
         if(checkbox.checked)
         {
           username.disabled = true;
@@ -87,6 +90,7 @@
 
       function AddComment(username, comment)
       {
+        PostComment(username, comment);
         commentfolder = document.getElementById("Comments");
         var string = '<article id="CommentBox">'+
                      '<h5 id="name">User: ' + username.value + '</h5>'

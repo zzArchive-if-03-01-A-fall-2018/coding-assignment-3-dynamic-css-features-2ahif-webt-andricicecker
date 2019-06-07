@@ -1,10 +1,7 @@
 body
 {
   height: 100vh;
-  margin-bottom: 0px;
-  /*background-size: auto 100% !important;*/
   background-image: url("../Picture/Background.jpg");
-  border: 0;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -15,7 +12,9 @@ p
     font-size: 12pt;
     clear: left;
 }
-fa-star.checked {
+
+fa-star.checked
+{
       color: orange;
 }
 nav
@@ -49,25 +48,13 @@ nav a:hover
   cursor: pointer;
 }
 
-#formluar
-{
-  border: black 3px;
-  padding: 90px 20px 90px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
-  transform: translate(-50%, -50%);
-}
-
 #homepage #myVideo
 {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100vh;
+  min-height: 100vh;
 }
 
 #homepage .description
@@ -83,17 +70,13 @@ nav a:hover
 
 #homepage #content
 {
-  padding: 20px 5px 20px;
   top: 1260px;
-  left: 0;
-  right: 0;
-  position: absolute;
-  width: 100%;
+  position: relative;
+  min-width: 100vh;
   border: black 1px;
   border-style: solid;
   padding: 50px;
   background-color: white;
-
 }
 
 
@@ -179,8 +162,6 @@ article > h2
 {
   text-align: left;
   clear: both;
-
-
 }
 
 
@@ -226,10 +207,20 @@ li a:hover:not(.active)
     background-color: #111;
 }
 
-
-
 input
 {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+#Feedbacks
+{
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    max-height: 40%;
+}
+#com
+{
+    max-height: 50%;
 }
