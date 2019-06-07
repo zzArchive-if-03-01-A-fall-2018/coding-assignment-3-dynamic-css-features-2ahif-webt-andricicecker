@@ -1,19 +1,10 @@
-html body
-{
-  min-width: 1080px;
-}
-
 body
 {
+  height: 100vh;
   margin-bottom: 0px;
-  min-width: 1080px;
-  min-height: 950px;
+  background-size: auto 100% !important;
   background-image: url("../Picture/Background.jpg");
   border: 0;
-  -webkit-background-size: auto auto;
-  -moz-background-size: auto auto;
-  -o-background-size: auto auto;
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
