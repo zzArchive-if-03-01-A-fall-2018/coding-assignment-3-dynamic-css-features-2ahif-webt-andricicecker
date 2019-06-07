@@ -11,7 +11,7 @@ function fetchAPI()
     console.log(JSON.stringify(myJson.id));
   });
 
-  fetch('http://localhost:3000/posts/3')
+  fetch('http://212.241.114.236:3000/posts/3')
   .then(function(response) {
     return response.json();
   })
