@@ -26,14 +26,22 @@
 */
 function FetchComments(username, comment)
 {
-  fetchAPI();
+  if(fetchAPI())
+  {
+    PostComment(username, comment);
+  }
+  else
+  {
+      console.log('Posten nicht möglich, aufgrund von Server-Problemen oder nicht verfügbar');
+  }
 }
 
 function fetchAPI()
 {
-  fetch("http://212.241.114.236:3000/db.json").onload = function()
+  fetch("http://81.10.214.134:3000/db.json").onload = function()
   {
     alert('Der Server ist online!');
+    return true;
   };
   .then(function (response) {
     console.log(response.status);
@@ -48,25 +56,26 @@ function fetchAPI()
       console.log(json["Test"]);
     }
   );
-  fetch("http://212.241.114.236:3000/db.json").onerror = function()
+  fetch("http://81.10.214.134:3000/db.json").onerror = function()
   {
     alert('Der Server ist nicht online!');
+    return false;
   };
 }
 
-function PostComment()
+function PostComment(username, comment)
 {
-  (async () => {
-  const rawResponse = await fetch('https://212.241.114.236:3000/post', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({a: 1, b: 'Textual content'})
-  });
-  const content = await rawResponse.json();
+  var url = 'https://81.10.214.134/profile';
+  var data = {username: username, comment: comment};
 
-  console.log(content);
-})();
+  return fetch(url, {
+    method: 'POST', // or 'PUT'
+    body: JSON.stringify(data), // data can be `string` or {object}!
+    headers:{
+      'Accept': 'application/json',
+      'comments': 'application/json'
+    }
+  }).then(res => res.json())
+  .then(response => console.log('Success:', JSON.stringify(response)))
+  .catch(error => console.error('Error:', error));
 }
