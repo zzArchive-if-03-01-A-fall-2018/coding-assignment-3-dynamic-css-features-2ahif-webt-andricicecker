@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/Contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="../js/fetchapi.js"></script>
+    <script src="../js/fetch.js"></script>
   </head>
   <body id="ContactBody">
       <nav>
@@ -61,9 +61,9 @@
       {
         let username = document.getElementById("Username");
         let checkbox = document.getElementById("blankCheckbox");
-        if(CheckBox(username, checkbox))
+        if(checkbox.checked == true)
         {
-          username.value = "Anonymous";
+         username.value = "Anonymous";
         }
         let comment = document.getElementById("Comment");
 
@@ -74,9 +74,11 @@
         username.value = "";
       }
 
-      function CheckBox(username, checkbox)
+      function CheckBox()
       {
-        if(checkbox.checked)
+        let username = document.getElementById("Username");
+        let checkbox = document.getElementById("blankCheckbox");
+        if(checkbox.checked == true)
         {
           username.disabled = true;
           return true;
@@ -91,12 +93,12 @@
       function AddComment(username, comment)
       {
         PostComment(username, comment);
-        commentfolder = document.getElementById("Comments");
+        /*commentfolder = document.getElementById("Comments");
         var string = '<article id="CommentBox">'+
-                     '<h5 id="name">User: ' + username.value + '</h5>'
+                     '<h5 id="name">User: ' + username.value + '</h5>' +
                      '<textarea id="comm" readonly name="Comment" rows="7"></textarea>'+
                      '</article>';
-        commentfolder.innerHTML += string;
+        commentfolder.innerHTML += string;*/
       }
       </script>
   </body>

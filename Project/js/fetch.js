@@ -24,10 +24,12 @@
   });
 }
 */
-function FetchComments(username, comment)
+function FetchComments()
 {
   if(fetchAPI())
   {
+    let username = document.getElementById('username');
+    let comment = document.getElementById('comment');
     PostComment(username, comment);
   }
   else
@@ -38,12 +40,10 @@ function FetchComments(username, comment)
 
 function fetchAPI()
 {
-  fetch("http://81.10.214.134:3000/db.json").onload = function()
-  {
+  fetch("http://192.168.0.5:3000/db.json").onload = function(){
     alert('Der Server ist online!');
-    return true;
-  };
-  .then(function (response) {
+  }
+  .then(function(response) {
     console.log(response.status);
     console.log(response.statusText);
     console.log(response.url);
@@ -56,16 +56,15 @@ function fetchAPI()
       console.log(json["Test"]);
     }
   );
-  fetch("http://81.10.214.134:3000/db.json").onerror = function()
+  fetch("http://192.168.0.5:3000/db.json").onerror = function()
   {
     alert('Der Server ist nicht online!');
-    return false;
   };
 }
 
 function PostComment(username, comment)
 {
-  var url = 'https://81.10.214.134/profile';
+  var url = 'https://192.168.0.5:3000/comments';
   var data = {username: username, comment: comment};
 
   return fetch(url, {
