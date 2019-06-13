@@ -1,29 +1,3 @@
-/*function fetchAPI()
-{
-  fetch('http://212.241.114.236:3000/posts/4')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-    console.log(JSON.stringify(myJson.title));
-    console.log(JSON.stringify(myJson.author));
-    console.log(JSON.stringify(myJson.id));
-  });
-
-  fetch('http://212.241.114.236:3000/posts/3')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-    console.log(JSON.stringify(myJson.title));
-    console.log(JSON.stringify(myJson.author));
-    console.log(JSON.stringify(myJson.content));
-    console.log(JSON.stringify(myJson.id));
-  });
-}
-*/
 function FetchComments()
 {
   if(fetchAPI())
@@ -34,14 +8,15 @@ function FetchComments()
   }
   else
   {
-      console.log('Posten nicht möglich, aufgrund von Server-Problemen oder nicht verfügbar');
+    console.log('Posten nicht möglich, aufgrund von Server-Problemen oder nicht verfügbar');
   }
 }
 
 function fetchAPI()
 {
-  fetch("http://192.168.0.5:3000/db.json").onload = function(){
+  fetch("http://localhost:3000/feedbacks").onload = function(){
     alert('Der Server ist online!');
+    return true;
   }
   .then(function(response) {
     console.log(response.status);
@@ -56,25 +31,25 @@ function fetchAPI()
       console.log(json["Test"]);
     }
   );
-  fetch("http://192.168.0.5:3000/db.json").onerror = function()
+  fetch("http://localhost:3000/feedbacks").onerror = function()
   {
     alert('Der Server ist nicht online!');
+    return false
   };
 }
 
 function PostComment(username, comment)
 {
-  var url = 'https://192.168.0.5:3000/comments';
-  var data = {username: username, comment: comment};
+  var url = 'http://localhost:3000/feedbacks';
+  var data = {"username":username, "comment":comment};
 
-  return fetch(url, {
+  fetch(url, {
     method: 'POST', // or 'PUT'
     body: JSON.stringify(data), // data can be `string` or {object}!
     headers:{
       'Accept': 'application/json',
-      'comments': 'application/json'
     }
   }).then(res => res.json())
-  .then(response => console.log('Success:', JSON.stringify(response)))
+  .then(response => console.log('Success:', JSON.stringify(data)))
   .catch(error => console.error('Error:', error));
 }

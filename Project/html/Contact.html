@@ -23,7 +23,7 @@
       </nav>
       <article id="com">
         <section>
-          <form action="" method="post">
+          <form method="post">
             <div class="form-check">
               <input class="form-check-input position-static" onclick="CheckBox()" type="checkbox" id="blankCheckbox"  value="Anonymous" aria-label="Anonymous">
               <label class="form-check-label" for="gridRadios1">Anonymous</label>
@@ -44,6 +44,7 @@
               <br><br>
             </div>
             <button type="button" value="Post" class="btn btn-dark" onClick="GetTextFields()">Post</button>
+            <button type="button" value="Test-Connection" class="btn btn-dark" onClick="TestServerConnection()">Test-Connection</button>
           </form>
         </section>
       </article>
@@ -67,7 +68,6 @@
         }
         let comment = document.getElementById("Comment");
 
-        //Implement ConvertToJSON();
         AddComment(username, comment);
 
         comment.value = "";
@@ -90,6 +90,17 @@
         }
       }
 
+      function TestServerConnection()
+      {
+        fetch("http://localhost:3000/profile")
+        .then(function() {
+          alert("Server online!");
+        })
+        .catch(function() {
+          alert("Server nicht verfügbar!");
+        });
+
+      }
       function AddComment(username, comment)
       {
         PostComment(username, comment);
