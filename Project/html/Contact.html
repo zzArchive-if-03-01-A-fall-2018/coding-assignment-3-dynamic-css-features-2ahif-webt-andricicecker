@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../js/fetch.js"></script>
   </head>
-  <body id="ContactBody">
+  <body id="ContactBody" onload="GetComments()">
       <nav>
         <a href="../Home.html">Home</a>
         <a href="index.html">Content</a>
@@ -23,7 +23,7 @@
       </nav>
       <article id="com">
         <section>
-          <form method="post">
+          <form>
             <div class="form-check">
               <input class="form-check-input position-static" onclick="CheckBox()" type="checkbox" id="blankCheckbox"  value="Anonymous" aria-label="Anonymous">
               <label class="form-check-label" for="gridRadios1">Anonymous</label>
@@ -52,7 +52,7 @@
 
       <article id="Feedbacks">
         <h3>Hier werden alle Kommentare angezeigt.</h3>
-        <div id="Comments" onload="FetchComments()">
+        <div id="Comments">
 
         </div>
       </article>
@@ -60,57 +60,32 @@
       <script>
       function GetTextFields()
       {
-        let username = document.getElementById("Username");
-        let checkbox = document.getElementById("blankCheckbox");
-        if(checkbox.checked == true)
+        let username = document.getElementById("Username").value;
+        let comment = document.getElementById("Comment").value;
+
+        if(CheckBox() == true)
         {
-         username.value = "Anonymous";
-        }
-        let comment = document.getElementById("Comment");
-
-        AddComment(username, comment);
-
-        comment.value = "";
-        username.value = "";
-      }
-
-      function CheckBox()
-      {
-        let username = document.getElementById("Username");
-        let checkbox = document.getElementById("blankCheckbox");
-        if(checkbox.checked == true)
-        {
-          username.disabled = true;
-          return true;
+          PostComment("Anonymous", comment);
         }
         else
         {
-          username.disabled = false;
-          return false;
+          PostComment(username, comment);
         }
+
+        comment.text = "";
+        username.text = "";
       }
 
-      function TestServerConnection()
-      {
-        fetch("http://localhost:3000/profile")
-        .then(function() {
-          alert("Server online!");
-        })
-        .catch(function() {
-          alert("Server nicht verfügbar!");
-        });
-
-      }
-      function AddComment(username, comment)
+      /*function AddComment(username, comment)
       {
         PostComment(username, comment);
-        /*commentfolder = document.getElementById("Comments");
+        commentfolder = document.getElementById("Comments");
         var string = '<article id="CommentBox">'+
                      '<h5 id="name">User: ' + username.value + '</h5>' +
                      '<textarea id="comm" readonly name="Comment" rows="7"></textarea>'+
                      '</article>';
-        commentfolder.innerHTML += string;*/
-      }
+        commentfolder.innerHTML += string;
+      }*/
       </script>
   </body>
 </html>

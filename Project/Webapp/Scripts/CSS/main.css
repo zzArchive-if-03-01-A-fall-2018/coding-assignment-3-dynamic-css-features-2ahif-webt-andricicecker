@@ -4,6 +4,14 @@ th,td{
 table{
 	border-collapse: collapse;
 }
+/*#scores {
+	clear: both;
+}
+
+.ScoreTable {
+		margin-left: 15%;
+		margin-top: 30%;
+}*/
 
 *
 {
@@ -11,7 +19,6 @@ table{
 	margin:0px;
 	font-family:Droid Serif;
 	font-size:20px;
-	//text-align:center;
 }
 section,footer,nav,article,hgroup
 {

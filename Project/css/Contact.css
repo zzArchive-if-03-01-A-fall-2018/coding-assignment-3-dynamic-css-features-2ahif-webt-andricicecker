@@ -29,6 +29,7 @@ body {
 
 .form-control {
     border-color:#d7d7d7;
+    min-width: 10%;
 }
 
 .btn-primary {
@@ -78,5 +79,16 @@ h3 {
 
 #Comments
 {
-  margin: 50px;
+    padding-top: 10px;
+    padding-right: 3px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    margin-right:3px;
+}
+
+#com {
+  overflow: visible;
 }

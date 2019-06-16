@@ -299,4 +299,9 @@ function gover(a)
 	$("#final_score").css("padding-right","10px");
 	$("#gover").css("background","rgb(100,100,100)");
 	$("#gover").css("text-shadow","1px 1px 1px white,2px 2px 2px black");
+	$.getScript('../../../js/fetch.js', function () {
+		// fetch.js wurde geladen
+		// Die Funktionen sind jetzt nutzbar
+		PostScores(document.getElementById('final_score'));
+	});	
 }
