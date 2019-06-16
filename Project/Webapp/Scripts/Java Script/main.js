@@ -44,7 +44,7 @@ $(document).ready(function  () {
 })
 function game()
 {
-	$("#Start").html("Game started");
+	$("#start").html("Game started");
 	$("#gover").fadeOut(100);
 	$("#score").html(0);
 	inte=setInterval(main,1000);
@@ -99,6 +99,7 @@ function appendText()
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
+			PostScores(sc);
 		}
 
 		if(margin>540)
@@ -129,11 +130,12 @@ function appendText2()
 		var cm=$("#"+rand).position();
 		var top=Math.floor(cm.top);
 		var left=Math.floor(cm.left);
-if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left+50 )||(car_top>=top && car_top<=top+100 && car_left>=left && car_left<=left+50 ))
+		if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left+50 )||(car_top>=top && car_top<=top+100 && car_left>=left && car_left<=left+50 ))
 		{
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
+			PostScores(sc);
 		}
 
 		if(margin2>540)
@@ -169,6 +171,7 @@ function appendText3()
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
+			PostScores(sc);
 		}
 
 		if(margin3>540)
@@ -199,11 +202,12 @@ function appendText4()
 		var cm=$("#"+rand).position();
 		var top=Math.floor(cm.top);
 		var left=Math.floor(cm.left);
-if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left+50 )||(car_top>=top && car_top<=top+100 && car_left>=left && car_left<=left+50 ))
+		if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left+50 )||(car_top>=top && car_top<=top+100 && car_left>=left && car_left<=left+50 ))
 		{
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
+			PostScores(sc);
 		}
 
 		if(margin4>540)
@@ -236,13 +240,13 @@ function appendText5()
 		var cm=$("#"+rand).position();
 		var top=Math.floor(cm.top);
 		var left=Math.floor(cm.left);
-if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left+50 )||(car_top>=top && car_top<=top+100 && car_left>=left && car_left<=left+50 ))
+		if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left+50 )||(car_top>=top && car_top<=top+100 && car_left>=left && car_left<=left+50 ))
 		{
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
+			PostScores(sc);
 		}
-
 		if(margin5>540)
 		{
 			clearInterval(abcd5);
@@ -270,16 +274,17 @@ function appendText6()
 		var cm=$("#"+rand).position();
 		var top=Math.floor(cm.top);
 		var left=Math.floor(cm.left);
-if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left+50 )||(car_top>=top && car_top<=top+100 && car_left>=left && car_left<=left+50 ))
+		if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left+50 )||(car_top>=top && car_top<=top+100 && car_left>=left && car_left<=left+50 ))
 		{
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
+			PostScores(sc);
 		}
-		if(margin6>540)
+		if(margin6 > 540)
 		{
 			clearInterval(abcd6);
-			$("#"+rand).remove();
+			$("#" + rand).remove();
 			$("#score").html(parseInt($("#score").text())+1);
 			return;
 		}
@@ -290,7 +295,7 @@ if((top+100>=car_top && top+100<=car_top+100 && left>=car_left && left<=car_left
 function gover(a)
 {
 	$("#final_score").text(a);
-	$("#Start").text("Start");
+	$("#start").text("Start");
 	$("#gover").fadeIn(100);
 	$("#gover").css("color","white");
 	$("#final_score").css("font-size","40px");
@@ -298,10 +303,5 @@ function gover(a)
 	$("#final_score").css("padding-left","10px");
 	$("#final_score").css("padding-right","10px");
 	$("#gover").css("background","rgb(100,100,100)");
-	$("#gover").css("text-shadow","1px 1px 1px white,2px 2px 2px black");
-	$.getScript('../../../js/fetch.js', function () {
-		// fetch.js wurde geladen
-		// Die Funktionen sind jetzt nutzbar
-		PostScores(document.getElementById('final_score'));
-	});	
+	$("#gover").css("text-shadow","1px 1px 1px white,2px 2px 2px black");	
 }

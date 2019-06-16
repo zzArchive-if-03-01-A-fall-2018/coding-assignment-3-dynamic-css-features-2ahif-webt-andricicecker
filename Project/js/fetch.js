@@ -1,5 +1,3 @@
-var allComments;
-
 function GetComments()
 {
   let data;
@@ -16,24 +14,37 @@ function GetComments()
     if(!response.ok)
     {
       console.log(response.ok + ' ' + response.status);
-      return;
+      return false;
     }
     return response.json();
-  }).then(jsonanswer => {
-      allComments = jsonanswer;
-      addingjsondata(allComments);
+  }).then(jsonanswer => { 
+      addingjsondata(jsonanswer);
+  }).catch(function(error) {
+    serverError();
   });
+  return true;
+}
+
+function serverError()
+{
+  alert("Server nicht verfügbar!\n Bitte überprüfen Sie ihre Internetverbindung.");
+}
+
+function WriteCommentsInHTML()
+{
+  return GetComments();
 }
 
 function addingjsondata(data) {
   var i;
-  let commentArticle = document.getElementById("Comments");
+  let commentArticle = document.getElementById("Feedbacks");
   var com;
   for(i = 0; i < data.length; i++)
   {
     var dat = JSON.stringify(data[i]);
     com = JSON.parse(dat);
-    commentArticle.innerHTML += '<div class="input-group mb-3">'+
+    commentArticle.innerHTML +='<div id="Comments">'+ 
+                              '<div class="input-group mb-3">'+
                               '<div class="input-group-prepend">'+
                               '<span class="input-group-text" id="basic-addon1">@</span>'+
                               '</div>'+
@@ -43,47 +54,32 @@ function addingjsondata(data) {
                                 '<div class="input-group-prepend">'+
                                 '<span class="input-group-text">Comment</span>'+
                               '</div>'+
-                              '<input type="text" id="Comment" value="' + com.comment + '" class="form-control" aria-label="Comment" maxlength="300" readonly></input>'+
+                              '<textarea type="text" id="Comment" rows="' + CountBackslashes(com.comment) + '" class="form-control" aria-label="Comment" maxlength="300" readonly>' + com.comment + '</textarea>'+
+                              '</div>'+
                               '<br><br>';
   }
 }
 
-function FetchComments()
+function CountBackslashes(comment)
 {
-  if(TestServerConnection())
+  var len = comment.length;
+  var counter = 0;
+  if(len < 1)
   {
-    return GetComments();
+    return 1;
   }
   else
   {
-    alert('Aufrufen der Kommentare nicht möglich, aufgrund von Server-Problemen oder nicht verfügbar');
-  }
-}
-
-function fetchAPI()
-{
-  fetch("http://localhost:3000/feedbacks").onload = function(){
-    alert('Der Server ist online!');
-    return true;
-  }
-  .then(function(response) {
-    console.log(response.status);
-    console.log(response.statusText);
-    console.log(response.url);
-    console.log(response.type);
-
-    return response.json();
-  })
-  .then(
-    function (json) {
-      console.log(json["Test"]);
+    var i = 0;
+    for(i = 0; i < len; i++)
+    {
+      if(comment[i] === "\n")
+      {
+        counter++;
+      }
     }
-  );
-  fetch("http://localhost:3000/feedbacks").onerror = function()
-  {
-    alert('Der Server ist nicht online!');
-    return false
-  };
+  }
+  return counter;
 }
 
 function PostComment(username, comment)
@@ -104,48 +100,96 @@ function PostComment(username, comment)
     {
       console.log('Success:', JSON.stringify(data));
       alert('Success:', JSON.stringify(data));
+      return true;
     }
     else{
       console.log('Fail:', JSON.stringify(data));
-      alert('Fail:', JSON.stringify(data));
+      serverError();
+      return false
     }
   })
   .catch(error => console.error('Error:', error));
 }
 
-
-
-function PostScores(finalScore)
+function PostScores(sc)
 {
-  var score = parseInt(finalScore.value);
+  var score = parseInt(sc);
   let data = {"points": score};
   fetch('http://localhost:3000/highscores',
   {
-    method: 'POST', // or 'PUT'
-    body: JSON.stringify(data), // data can be `string` or {object}!
+    method: 'POST',
+    body: JSON.stringify(data),
     headers:{
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
-  }).then(res => res.json())
-  .then(response => console.log('Success:', JSON.stringify(data)))
-  .catch(error => console.error('Error:', error));
+  }).then(function(res) {
+    if(res.ok)
+    {
+      console.log('Success:', JSON.stringify(data))
+    }
+    return res.json();
+  }).catch(error => console.error('Error:', error));
+}
+
+function SortPoints(data){
+  //Parsing the data so that it's usable
+  var ix=JSON.stringify(data);
+  var obj=JSON.parse(ix);
+
+  var i;
+  var j;
+  for (i = 0; i < data.length; i++) {
+       for(j = 0 ; j < data.length - i-1; j++){
+       if (data[j].points < data[j + 1].points) {
+         var temp = data[j];
+         data[j] = data[j+1];
+         data[j + 1] = temp;
+       }
+      }
+     }
+
+   return data;
 }
 
 function GetScores()
 {
-  fetch('examples/example.json')
+  fetch('http://localhost:3000/highscores')
   .then(function(response) {
    if(!response.ok)
    {
-    throw new Error(response.statusText);
+    console.log(response.statusText);
+    serverError();
    }
    return response.json();
+  }).then(function(data) {
+    var sortedData = SortPoints(data);
+    WriteScoresInHTML(sortedData);
   })
   .catch(function(error) {
-    console.log('Looks like there was a problem: \n', error);
-    throw new Error(error);
+    serverError();
   });
+}
+
+function WriteScoresInHTML(data)
+{
+  var p = document.getElementById("scores");
+  var i;
+  if(data.length < 1)
+  {
+    return;
+  }
+  for(i = 0; i < data.length; i++)
+  {
+    p.innerHTML += '<tr>'+
+                   '<td>'+
+                   i +
+                   '</td>'+
+                   '<td>'+
+                   data[i].points+
+                   '</td>'+
+                   '</tr>';
+  }
 }
 
 function CheckBox()
@@ -167,15 +211,19 @@ function CheckBox()
 
 function TestServerConnection()
 {
-  fetch("http://localhost:3000/profile")
-  .then(function() {
-    alert("Server online!");
-    console.log("Server online!");
-    return true;
-  })
-  .catch(function() {
-    alert("Server nicht verfügbar!");
-    console.log("Server nicht verfügbar!");
-    return false;
+  fetch("http://localhost:3000/feedbacks")
+  .then(function(response) {
+    if(response.ok)
+    {
+      alert("Server online!");
+      console.log("Server online!");
+      return true;
+    }
+    else
+    {
+      console.log("Server nicht verfügbar!");
+      serverError();
+      return false;
+    }
   });
 }

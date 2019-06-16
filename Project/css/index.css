@@ -71,12 +71,17 @@ nav a:hover
 #homepage #content
 {
   top: 1260px;
-  position: relative;
+  left: 0;
+  right:0;
+  position: absolute;
   min-width: 100vh;
   border: black 1px;
   border-style: solid;
   padding: 50px;
   background-color: white;
+  margin-left: 0%;
+  margin-right: 0%;
+  z-index: 0;
 }
 
 
@@ -103,7 +108,7 @@ nav a:hover
   display: inline-block;
   padding: 5px;
   width: 600px;
-  float: right;
+  
   position: relative;
   margin-bottom: 30px;
 }
@@ -218,9 +223,14 @@ input
     overflow-y: scroll;
     margin-bottom: 20px;
     margin-top: 20px;
-    max-height: 40%;
+    max-height: 35%;
 }
 #com
 {
     max-height: 50%;
 }
+
+#ScoreBoard {
+  background: white;
+}
+
