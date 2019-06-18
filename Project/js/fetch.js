@@ -183,7 +183,7 @@ function WriteScoresInHTML(data)
   {
     p.innerHTML += '<tr>'+
                    '<td>'+
-                   i +
+                   (i + 1) +
                    '</td>'+
                    '<td>'+
                    data[i].points+

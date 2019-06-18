@@ -1,3 +1,5 @@
+let firstPost = false;
+
 function fun(e)
 {
 	var a=e.which;
@@ -99,7 +101,7 @@ function appendText()
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
-			PostScores(sc);
+			
 		}
 
 		if(margin>540)
@@ -135,7 +137,7 @@ function appendText2()
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
-			PostScores(sc);
+			
 		}
 
 		if(margin2>540)
@@ -171,7 +173,7 @@ function appendText3()
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
-			PostScores(sc);
+			
 		}
 
 		if(margin3>540)
@@ -207,7 +209,7 @@ function appendText4()
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
-			PostScores(sc);
+		
 		}
 
 		if(margin4>540)
@@ -245,7 +247,7 @@ function appendText5()
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
-			PostScores(sc);
+			
 		}
 		if(margin5>540)
 		{
@@ -279,7 +281,7 @@ function appendText6()
 			var sc=$("#score").text();
 			clearInterval(inte);
 			gover(sc);
-			PostScores(sc);
+			
 		}
 		if(margin6 > 540)
 		{
@@ -294,6 +296,11 @@ function appendText6()
 
 function gover(a)
 {
+	if(!firstPost)
+	{
+		firstPost = true;
+		Post(a);
+	}
 	$("#final_score").text(a);
 	$("#start").text("Start");
 	$("#gover").fadeIn(100);
@@ -304,4 +311,9 @@ function gover(a)
 	$("#final_score").css("padding-right","10px");
 	$("#gover").css("background","rgb(100,100,100)");
 	$("#gover").css("text-shadow","1px 1px 1px white,2px 2px 2px black");	
+}
+
+function Post(scores)
+{
+	PostScores(scores);
 }
