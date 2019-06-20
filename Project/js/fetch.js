@@ -99,6 +99,7 @@ function PostComment(username, comment)
     if(response.ok)
     {
       console.log('Success:', JSON.stringify(data));
+      setTimeout(PostComment, 3000);
       alert('Success:', JSON.stringify(data));
       return true;
     }
@@ -127,6 +128,8 @@ function PostScores(sc)
     if(res.ok)
     {
       console.log('Success:', JSON.stringify(data))
+      setTimeout(PostScores, 3000);
+      alert('Success:', JSON.stringify(data));
     }
     return res.json();
   }).catch(error => console.error('Error:', error));
@@ -174,7 +177,7 @@ function GetScores()
 function WriteScoresInHTML(data)
 {
   var p = document.getElementById("scores");
-  var i;
+  let i;
   if(data.length < 1)
   {
     return;

@@ -58,26 +58,25 @@
       <script>
       function GetTextFields()
       {
-        let username = document.getElementById("Username").value;
-        let comment = document.getElementById("Comment").value;
-        if(username == "" && CheckBox() === false)
+        let username = document.getElementById("Username");
+        let comment = document.getElementById("Comment");
+        if(username === "" && CheckBox() === false)
         {
           alert("Bitte geben Sie ihren Namen ein oder drücken Sie auf Anonym!");
           return;
         }
         if(CheckBox())
         {
-          PostComment("Anonymous", comment);
+          PostComment("Anonymous", comment.value);
         }
         else
         {
-          PostComment(username, comment);
+          PostComment(username.value, comment.value);
         }
 
         comment.value = "";
         username.value = "";
-        comment.value = "";
-        username.value = "";
+        location.reload(true);
       }
       </script>
   </body>
